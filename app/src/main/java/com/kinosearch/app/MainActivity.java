@@ -80,6 +80,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if (mWebView.canGoBack()) {
+            mWebView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
     private void load(){//Blocklist loading
         String strLine2="";
         blocklist = new StringBuilder();
